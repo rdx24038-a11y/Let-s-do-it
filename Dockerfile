@@ -11,4 +11,4 @@ COPY . .
 
 RUN echo "socks5 127.0.0.1 9050" >> /etc/proxychains4.conf
 
-CMD tor & sleep 15 && while true; do python3 app.py; echo "Restarting..."; sleep 5; done
+CMD tor & sleep 15 && while true; do python3 -u app.py 2>&1; echo "Restarting in 5s..."; sleep 5; done
